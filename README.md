@@ -5,5 +5,8 @@
       
       Examples:
       
-        $Password = $Word1 + "-" + $Word2 + "-" + $Word3 + "-" + $sChars + $Special
-        sacred-spectrum-charge-1StvF$
+        $Password = $Word1 + "-" + $Word2 + "-" + $Word3 + "-" + $Chars
+         sacred-spectrum-charge-1StvF$
+
+        $Password2 = $Word1 + $Special + $Word2 + $Special2 + $Chars
+         sacred$spectrum+1StvF
