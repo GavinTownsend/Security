@@ -4,6 +4,7 @@
       Generates random passphrases or passwords in a flexible way
       
       Output examples:
+      
         sacred$1StvF
         
         sacred$spectrum+1StvF
