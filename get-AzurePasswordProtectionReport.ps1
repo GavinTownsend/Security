@@ -1,6 +1,6 @@
 <#
 	.SYNOPSIS
-		Central logging of Azure Password Protection (APP) event logs
+		Central logging of Azure Password Protection (APP) event logs (on-premises)
 	
 	.NOTES
 		Script Name:	get-AzurePasswordProtectionReport.ps1
