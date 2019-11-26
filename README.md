@@ -20,4 +20,5 @@
         O[2nhP7lH3DQ92>8LEt=}@3I4y<ad@q)
 
   * get-AzurePasswordProtectionReport.ps1
+  
       Central logging of Azure Password Protection (APP) event logs
