@@ -4,8 +4,8 @@
 	
 	.NOTES
 		Script Name:	Get-PW.ps1
-		Created By:		Gavin Townsend
-		Date:			October 2019
+		Created By:	Gavin Townsend
+		Date:		October 2019
 		
 	.DESCRIPTION
 		The script performs the follow actions:
