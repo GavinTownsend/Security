@@ -14,7 +14,7 @@
 			- Builds password using custom patterns depending on use cases	
 		
 	.EXAMPLE
-			.\Get-PW.ps1
+		>Get-PW
 			
 			
 	.REQUIREMENTS
