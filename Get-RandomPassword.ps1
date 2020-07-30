@@ -28,6 +28,7 @@
 	.VERSION HISTORY
 		1.0		Oct 2019	Gavin Townsend		Original Build
 		1.1		Oct 2019	Gavin Townsend		Created functions for adding to local PS profile
+		1.2		Jul	2020	Gavin Townsend		Added phrase generator from your own sentence
 
 #>
 
@@ -41,6 +42,7 @@ Function get-pw{
 
 	[string]$sChars1 = $NULL
 	[string]$sChars2 = $NULL
+	$MySentence = Read-Host 'Write a sentence to create your own phrase (or hit enter to skip)'
 	$Words = @()
 	$Chars1 = @()
 	$Chars2 = @()
@@ -109,6 +111,15 @@ Function get-pw{
 	$sChars2 = $Chars2 | Sort-Object {Get-Random}
 	$sChars2 = $sChars2.Replace(' ', '')
 
+	#DEFINE MY SENTENCE
+	#------------------
+	
+	if ($MySentence.length -gt 1) {
+		$MyWords = $MySentence.split(" ")
+		foreach ($MyWord in $MyWords){
+			$MyPhrase+=$MyWord.ToCharArray() | Select-Object -First 1
+		}
+	}
 
 	#GENERATE
 	#--------
@@ -119,6 +130,9 @@ Function get-pw{
 	$Password3 = $Word1 + "-" + $Word2 + "-" + $Word3 + "-" + $sChars1 + $Special1
 	$Password4 = $Word1 + $Word2 + $Word3 + $Word4 + $Word5
 	$Password5 = $sChars2
+	if ($MySentence.length -gt 1) {
+		$Password6 = $MyPhrase+ "-" +$sChars1
+	}
 
 	#DISPLAY and CLIP
 	#----------------
@@ -129,6 +143,9 @@ Function get-pw{
 	write-host $Password3 -foregroundcolor yellow
 	write-host $Password4
 	write-host $Password5
+	if ($MySentence.length -gt 1) {
+		write-host $Password6
+	}
 	write-host " "
 
 	try{
@@ -146,3 +163,6 @@ Function set-pw{
 			
 	Set-ADAccountPassword $Username -NewPassword $PW -Reset -PassThru | Set-ADuser -ChangePasswordAtLogon $True
 }
+
+
+get-pw
